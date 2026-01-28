@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine?</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Confetti library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Will you be my Valentine? 💖</h1>
+
+    <img src="us-1.jpg" alt="Us" class="valentine-pic">
+
+    <div class="buttons">
+      <button id="yesBtn">Yes 💘</button>
+      <button id="noBtn">No 🙈</button>
+    </div>
+
+    <p id="message"></p>
+
+    <div id="invite" class="hidden">
+      <h2>💌 Valentine’s Date 💌</h2>
+      <p>
+        Dinner at 6pm at Samurai 🍝<br>
+        Dessert after 🍰<br>
+        You + Me 💖
+      </p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+body {
+  background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.valentine-pic {
+  width: 250px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.buttons button {
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+#yesBtn {
+  background-color: #ff4d6d;
+  color: white;
+}
+
+#noBtn {
+  background-color: #ddd;
+}
+
+#message {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #ff4d6d;
+}
+
+.hidden {
+  display: none;
+}
+
+#invite {
+  margin-top: 30px;
+  font-size: 20px;
+}
+const yesBtn = document.getElementById("yesBtn");
+const noBtn = document.getElementById("noBtn");
+const message = document.getElementById("message");
+const invite = document.getElementById("invite");
+
+yesBtn.addEventListener("click", () => {
+  message.textContent = "Yay!! 💕 I’m so happy! 💖";
+  invite.style.display = "block";
+
+  confetti({
+    particleCount: 200,
+    spread: 90,
+    origin: { y: 0.6 }
+  });
+});
+
+noBtn.addEventListener("mouseover", () => {
+  const x = Math.random() * 200 - 100;
+  const y = Math.random() * 200 - 100;
+  noBtn.style.transform = `translate(${x}px, ${y}px)`;
+});
