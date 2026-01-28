@@ -1,0 +1,60 @@
+body {
+  background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.valentine-pic {
+  width: 250px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.buttons button {
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+#yesBtn {
+  background-color: #ff4d6d;
+  color: white;
+}
+
+#noBtn {
+  background-color: #ddd;
+}
+
+#message {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #ff4d6d;
+}
+
+.hidden {
+  display: none;
+}
+
+#invite {
+  margin-top: 30px;
+  font-size: 20px;
+}
